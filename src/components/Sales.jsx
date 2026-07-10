@@ -8,7 +8,6 @@ const forSale = [
   { id: 3, title: "Imóvel à venda 3", src: "/venda3.jpg" },
   { id: 4, title: "Imóvel à venda 4", src: "/venda4.jpg" },
   { id: 5, title: "Imóvel à venda 5", src: "/venda5.jpg" },
-  { id: 6, title: "Imóvel à venda 6", src: "/venda6.jpg" },
 ];
 
 function HouseIcon({ className }) {
