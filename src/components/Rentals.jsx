@@ -42,7 +42,7 @@ export default function Rentals() {
         </p>
       </Reveal>
 
-      <Reveal delay={150} className="relative mx-auto mt-10 flex h-[260px] items-center justify-center sm:h-[340px] [perspective:1000px]">
+      <Reveal delay={150} className="relative mx-auto mt-10 flex h-[260px] items-center justify-center overflow-hidden sm:h-[340px] [perspective:1000px]">
         {rentals.map((property, index) => {
           const total = rentals.length;
           let pos = (index - currentIndex + total) % total;

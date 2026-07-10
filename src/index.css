@@ -4,6 +4,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 section[id] {
@@ -16,6 +18,7 @@ body {
   background-color: #ffffff;
   color: #021024;
   overflow-x: hidden;
+  max-width: 100%;
 }
 
 @keyframes pulse-gold {
