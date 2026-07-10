@@ -28,17 +28,19 @@ export default function Header() {
           />
         </a>
 
-        <nav className="scrollbar-hide flex min-w-0 flex-1 items-center gap-x-3 overflow-x-auto xl:gap-x-6">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="relative shrink-0 whitespace-nowrap text-[10.5px] font-semibold uppercase tracking-wide text-ink-600 transition-colors duration-200 after:absolute after:-bottom-1.5 after:left-1/2 after:h-0.5 after:w-0 after:-translate-x-1/2 after:rounded-full after:bg-gold after:transition-all after:duration-200 hover:text-ink-950 hover:after:w-full xl:text-xs xl:tracking-wider"
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
+        <div className="scrollbar-hide min-w-0 flex-1 overflow-x-auto">
+          <nav className="mx-auto flex w-fit items-center gap-x-3 xl:gap-x-6">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="relative shrink-0 whitespace-nowrap text-[10.5px] font-semibold uppercase tracking-wide text-ink-600 transition-colors duration-200 after:absolute after:-bottom-1.5 after:left-1/2 after:h-0.5 after:w-0 after:-translate-x-1/2 after:rounded-full after:bg-gold after:transition-all after:duration-200 hover:text-ink-950 hover:after:w-full xl:text-xs xl:tracking-wider"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+        </div>
 
         <div className="shrink-0">
           <WhatsAppButton size="sm" />
