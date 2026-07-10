@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://corretora-rubia.vercel.app/sitemap.xml
