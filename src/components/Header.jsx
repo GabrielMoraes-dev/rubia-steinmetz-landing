@@ -29,12 +29,12 @@ export default function Header() {
         </a>
 
         <div className="scrollbar-hide min-w-0 flex-1 overflow-x-auto">
-          <nav className="mx-auto flex w-fit items-center gap-x-3 xl:gap-x-6">
+          <nav className="mx-auto flex w-fit items-center gap-x-0.5 xl:gap-x-1.5">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="relative shrink-0 whitespace-nowrap text-[10.5px] font-semibold uppercase tracking-wide text-ink-600 transition-colors duration-200 after:absolute after:-bottom-1.5 after:left-1/2 after:h-0.5 after:w-0 after:-translate-x-1/2 after:rounded-full after:bg-gold after:transition-all after:duration-200 hover:text-ink-950 hover:after:w-full xl:text-xs xl:tracking-wider"
+                className="shrink-0 whitespace-nowrap rounded-full px-3 py-1.5 text-[10.5px] font-semibold uppercase tracking-wide text-ink-600 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-black hover:text-gold hover:shadow-md hover:shadow-gold/20 xl:text-xs xl:tracking-wider"
               >
                 {link.label}
               </a>
