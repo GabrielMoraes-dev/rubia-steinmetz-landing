@@ -5,8 +5,8 @@ import Reveal from "./Reveal";
 const forSale = [
   { id: 1, title: "Imóvel à venda 1", src: "/venda1.jpg" },
   { id: 2, title: "Imóvel à venda 2", src: "/venda2.jpg" },
-  { id: 3, title: "Imóvel à venda 3", src: "/venda3.jpg" },
-  { id: 4, title: "Imóvel à venda 4", src: "/venda4.jpg" },
+  { id: 3, title: "Imóvel à venda 3", src: "/venda4.jpg" },
+  { id: 4, title: "Imóvel à venda 4", src: "/venda3.jpg" },
   { id: 5, title: "Imóvel à venda 5", src: "/venda5.jpg" },
 ];
 
