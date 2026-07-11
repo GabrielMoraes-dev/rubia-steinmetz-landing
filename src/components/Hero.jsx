@@ -29,6 +29,15 @@ export default function Hero() {
           className="[grid-area:photo] relative flex justify-center lg:self-center"
         >
           <div
+            className="pointer-events-none absolute left-1/2 top-[62%] h-[110%] w-[110%] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-[3rem] opacity-25 [mask-image:radial-gradient(closest-side,black_55%,transparent)] [-webkit-mask-image:radial-gradient(closest-side,black_55%,transparent)]"
+            style={{
+              backgroundImage: "url('/backgroundhero.jpg')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
+
+          <div
             className="pointer-events-none absolute left-1/2 top-[62%] h-[110%] w-[110%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/40 blur-3xl [mask-image:linear-gradient(to_bottom,black_0%,black_55%,transparent_78%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_55%,transparent_78%)]"
           />
 
