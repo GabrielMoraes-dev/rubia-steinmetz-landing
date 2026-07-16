@@ -23,7 +23,7 @@ export default function Differentials() {
         <ul className="mt-6 grid grid-cols-2 gap-2.5 sm:gap-4 lg:grid-cols-3">
           {items.map((item, i) => (
             <Reveal as="li" key={item} delay={i * 70}>
-              <div className="flex h-full items-center gap-2 rounded-xl border border-ink-100 bg-white p-3 text-left text-xs font-medium leading-snug text-ink-950 shadow-sm transition-all duration-200 sm:p-4 sm:text-sm lg:hover:-translate-y-1 lg:hover:border-gold/40 lg:hover:shadow-lg">
+              <div className="flex h-full items-center gap-2 rounded-xl border border-ink-100 bg-white p-3 text-left text-xs font-medium leading-snug text-ink-950 shadow-sm transition-all duration-300 ease-premium sm:p-4 sm:text-sm lg:hover:-translate-y-1 lg:hover:border-gold/40 lg:hover:shadow-lg">
                 <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-black text-[10px] font-bold text-gold sm:h-6 sm:w-6 sm:text-xs">
                   ✓
                 </span>

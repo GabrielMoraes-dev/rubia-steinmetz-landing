@@ -31,7 +31,7 @@ export default function WhatsAppButton({
       href={WHATSAPP_URL}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-200 lg:hover:-translate-y-0.5 lg:hover:shadow-lg ${
+      className={`inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-300 ease-premium lg:hover:-translate-y-0.5 lg:hover:shadow-lg ${
         variants[variant]
       } ${sizes[size]} ${full ? "w-full" : ""} ${className}`}
     >

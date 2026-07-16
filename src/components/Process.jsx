@@ -36,7 +36,7 @@ export default function Process() {
       <div className="mt-6 grid grid-cols-2 gap-2.5 sm:gap-6 lg:grid-cols-4">
         {steps.map((s, i) => (
           <Reveal key={s.n} delay={i * 100}>
-            <div className="relative h-full rounded-2xl bg-ink-100/40 p-3 text-left transition-all duration-200 sm:p-6 lg:hover:-translate-y-1 lg:hover:bg-white lg:hover:shadow-xl">
+            <div className="relative h-full rounded-2xl bg-ink-100/40 p-3 text-left transition-all duration-300 ease-premium sm:p-6 lg:hover:-translate-y-1 lg:hover:bg-white lg:hover:shadow-xl">
               <div className="flex items-center gap-2">
                 <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-black text-xs font-bold text-gold sm:h-7 sm:w-7 sm:text-sm">
                   {s.n}

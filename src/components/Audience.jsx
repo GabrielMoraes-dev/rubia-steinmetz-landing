@@ -9,7 +9,7 @@ const items = [
 ];
 
 const cardClass =
-  "flex items-center justify-center rounded-xl border border-white/10 bg-white/5 p-3 text-center text-xs font-medium leading-snug text-ink-100 shadow-sm transition-all duration-200 sm:p-5 sm:text-sm lg:hover:border-gold/40 lg:hover:bg-white/10";
+  "flex items-center justify-center rounded-xl border border-white/10 bg-white/5 p-3 text-center text-xs font-medium leading-snug text-ink-100 shadow-sm transition-all duration-300 ease-premium sm:p-5 sm:text-sm lg:hover:border-gold/40 lg:hover:bg-white/10";
 
 export default function Audience() {
   return (

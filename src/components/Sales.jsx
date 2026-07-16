@@ -72,7 +72,7 @@ export default function Sales() {
               )}
             </div>
 
-            <div className="flex gap-2.5 overflow-x-auto p-1 sm:gap-3 lg:h-full lg:flex-col lg:overflow-x-visible lg:overflow-y-auto lg:p-1">
+            <div className="momentum-scroll flex gap-2.5 overflow-x-auto p-1 sm:gap-3 lg:h-full lg:flex-col lg:overflow-x-visible lg:overflow-y-auto lg:p-1">
               {forSale.map((property, i) => (
                 <button
                   key={property.id}
@@ -80,7 +80,7 @@ export default function Sales() {
                   onClick={() => setActive(i)}
                   aria-label={property.title}
                   aria-current={i === active}
-                  className={`group relative aspect-square w-16 shrink-0 overflow-hidden rounded-xl bg-ink-100/50 transition-all duration-200 sm:w-20 lg:w-full ${
+                  className={`group relative aspect-square w-16 shrink-0 overflow-hidden rounded-xl bg-ink-100/50 transition-all duration-300 ease-premium sm:w-20 lg:w-full ${
                     i === active
                       ? "scale-105 shadow-md ring-2 ring-gold"
                       : "opacity-80 ring-1 ring-ink-100 hover:opacity-100 hover:ring-gold/40"

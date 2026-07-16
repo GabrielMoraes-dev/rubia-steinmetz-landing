@@ -20,6 +20,10 @@ export default {
       fontFamily: {
         sans: ["'Inter'", "system-ui", "sans-serif"],
       },
+      transitionTimingFunction: {
+        premium: "cubic-bezier(0.16, 1, 0.3, 1)",
+        "premium-inout": "cubic-bezier(0.65, 0, 0.35, 1)",
+      },
     },
   },
   plugins: [],

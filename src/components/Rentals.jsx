@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import WhatsAppButton from "./WhatsAppButton";
 import Reveal from "./Reveal";
 
@@ -15,19 +15,41 @@ export default function Rentals() {
   const [currentIndex, setCurrentIndex] = useState(
     Math.floor(rentals.length / 2)
   );
+  const [paused, setPaused] = useState(false);
+  const dragState = useRef({ startX: 0, dragging: false });
 
   const handleNext = useCallback(() => {
     setCurrentIndex((i) => (i + 1) % rentals.length);
   }, []);
 
-  const handlePrev = () => {
+  const handlePrev = useCallback(() => {
     setCurrentIndex((i) => (i - 1 + rentals.length) % rentals.length);
-  };
+  }, []);
 
   useEffect(() => {
+    if (paused) return undefined;
     const timer = setInterval(handleNext, 4000);
     return () => clearInterval(timer);
-  }, [handleNext]);
+  }, [handleNext, paused]);
+
+  const onPointerDown = (e) => {
+    dragState.current = { startX: e.clientX, dragging: true };
+    setPaused(true);
+  };
+
+  const onPointerMove = (e) => {
+    if (!dragState.current.dragging) return;
+    const delta = e.clientX - dragState.current.startX;
+    if (Math.abs(delta) < 40) return;
+    dragState.current.dragging = false;
+    if (delta < 0) handleNext();
+    else handlePrev();
+  };
+
+  const endDrag = () => {
+    dragState.current.dragging = false;
+    setPaused(false);
+  };
 
   return (
     <section id="temporada" className="mx-auto max-w-6xl px-5 py-16 sm:px-8 lg:py-24">
@@ -42,7 +64,16 @@ export default function Rentals() {
         </p>
       </Reveal>
 
-      <Reveal delay={150} className="relative mx-auto mt-10 flex h-[260px] items-center justify-center overflow-hidden sm:h-[340px] [perspective:1000px]">
+      <Reveal
+        delay={150}
+        className="relative mx-auto mt-10 flex h-[260px] cursor-grab items-center justify-center overflow-hidden touch-pan-y select-none active:cursor-grabbing sm:h-[340px] [perspective:1000px]"
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={endDrag}
+        onPointerLeave={endDrag}
+      >
         {rentals.map((property, index) => {
           const total = rentals.length;
           let pos = (index - currentIndex + total) % total;
@@ -54,7 +85,7 @@ export default function Rentals() {
           return (
             <div
               key={property.id}
-              className="absolute flex h-[220px] w-56 items-center justify-center transition-all duration-500 ease-in-out sm:h-[320px] sm:w-80"
+              className="absolute flex h-[220px] w-56 items-center justify-center transition-all duration-700 ease-premium sm:h-[320px] sm:w-80"
               style={{
                 transform: `translateX(${pos * 55}%) scale(${
                   isCenter ? 1 : isAdjacent ? 0.85 : 0.7
@@ -69,6 +100,7 @@ export default function Rentals() {
                 <img
                   src={property.src}
                   alt={property.title}
+                  draggable="false"
                   className="h-full w-full rounded-2xl border border-ink-100 object-cover shadow-xl"
                 />
               ) : (
@@ -103,7 +135,7 @@ export default function Rentals() {
           type="button"
           onClick={handlePrev}
           aria-label="Casa anterior"
-          className="absolute left-0 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-ink-100 bg-white/80 shadow-md backdrop-blur-sm transition-colors hover:bg-white sm:left-4"
+          className="absolute left-0 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-ink-100 bg-white/80 shadow-md backdrop-blur-sm transition-all duration-300 ease-premium hover:scale-110 hover:bg-white sm:left-4"
         >
           <svg
             viewBox="0 0 24 24"
@@ -119,7 +151,7 @@ export default function Rentals() {
           type="button"
           onClick={handleNext}
           aria-label="Próxima casa"
-          className="absolute right-0 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-ink-100 bg-white/80 shadow-md backdrop-blur-sm transition-colors hover:bg-white sm:right-4"
+          className="absolute right-0 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-ink-100 bg-white/80 shadow-md backdrop-blur-sm transition-all duration-300 ease-premium hover:scale-110 hover:bg-white sm:right-4"
         >
           <svg
             viewBox="0 0 24 24"

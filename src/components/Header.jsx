@@ -34,7 +34,7 @@ export default function Header() {
               <a
                 key={link.href}
                 href={link.href}
-                className="shrink-0 whitespace-nowrap rounded-full px-3 py-1.5 text-[10.5px] font-semibold uppercase tracking-wide text-ink-600 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:bg-black hover:text-gold hover:shadow-md hover:shadow-gold/20 xl:text-xs xl:tracking-wider"
+                className="shrink-0 whitespace-nowrap rounded-full px-3 py-1.5 text-[10.5px] font-semibold uppercase tracking-wide text-ink-600 transition-all duration-300 ease-premium hover:-translate-y-0.5 hover:bg-black hover:text-gold hover:shadow-md hover:shadow-gold/20 xl:text-xs xl:tracking-wider"
               >
                 {link.label}
               </a>
@@ -90,7 +90,7 @@ export default function Header() {
       />
 
       <nav
-        className={`absolute inset-x-0 top-full overflow-hidden rounded-b-3xl bg-white shadow-2xl transition-all duration-300 ease-in-out lg:hidden ${
+        className={`absolute inset-x-0 top-full overflow-hidden rounded-b-3xl bg-white shadow-2xl transition-all duration-500 ease-premium-inout lg:hidden ${
           open ? "max-h-[36rem]" : "max-h-0"
         }`}
       >
@@ -102,7 +102,7 @@ export default function Header() {
           {navLinks.map((link, i) => (
             <li
               key={link.href}
-              className="transition-all duration-300 ease-out"
+              className="transition-all duration-[400ms] ease-premium"
               style={{
                 transitionDelay: open ? `${i * 40}ms` : "0ms",
                 opacity: open ? 1 : 0,

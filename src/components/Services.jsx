@@ -35,7 +35,7 @@ export default function Services() {
         {services.map((s, i) => (
           <Reveal key={s.title} delay={i * 100}>
             <div
-              className={`rounded-2xl border p-6 text-center shadow-sm transition-all duration-200 lg:text-left lg:hover:-translate-y-1 lg:hover:shadow-xl ${
+              className={`rounded-2xl border p-6 text-center shadow-sm transition-all duration-300 ease-premium lg:text-left lg:hover:-translate-y-1 lg:hover:shadow-xl ${
                 s.highlight
                   ? "animate-pulse-gold border-black bg-black text-white"
                   : "border-ink-100 bg-white text-ink-950 lg:hover:border-gold/40"
