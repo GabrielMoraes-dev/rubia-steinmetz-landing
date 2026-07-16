@@ -2,7 +2,7 @@ import Reveal from "./Reveal";
 
 const services = [
   {
-    title: "Venda de imóveis residenciais",
+    title: "Venda de imóveis",
     text: "Oriento quem deseja vender com mais tranquilidade, clareza e uma apresentação adequada do imóvel.",
   },
   {

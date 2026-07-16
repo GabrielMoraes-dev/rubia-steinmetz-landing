@@ -8,7 +8,7 @@ const rentals = [
   { id: 3, title: "Casa de temporada 3", src: "/temporada3.png" },
   { id: 4, title: "Casa de temporada 4", src: "/temporada4.png" },
   { id: 5, title: "Casa de temporada 5", src: "/temporada5.png" },
-  { id: 6, title: "Casa de temporada 6", src: "/temporada6.png" },
+  { id: 6, title: "Casa de temporada 6", src: "/temporada6v2.png" },
 ];
 
 export default function Rentals() {
